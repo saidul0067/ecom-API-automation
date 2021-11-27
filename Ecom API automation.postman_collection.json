@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "896df05e-be4e-47d8-86fb-2016600e69eb",
+		"name": "Ecom API automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buyer Login",
+			"item": [
+				{
+					"name": "positive",
+					"item": [
+						{
+							"name": "1. Buyer should login with register email and passworld",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Buyer logged in successfully\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThiMmUwNzdmOWY0NzAzY2NlOWJjYzAiLCJyb2xlIjoidXNlciIsImVtYWlsIjoiZGFsZWFwYXJ2aW5AZ21haWwuY29tIiwiaWF0IjoxNjM3NzI3Njc4LCJleHAiOjE2Mzc4MTQwNzh9.WwITaw6yBXg72N34Zlxk_SaUwWVY8QoCVV1HbxF37Rw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"daleaparvin@gmail.com\",\r\n    \"password\":\"112233\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/signin",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Negative",
+					"item": [
+						{
+							"name": "1.1 Buyer should not login without  register email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Buyer logged in successfully\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThiMmUwNzdmOWY0NzAzY2NlOWJjYzAiLCJyb2xlIjoidXNlciIsImVtYWlsIjoiZGFsZWFwYXJ2aW5AZ21haWwuY29tIiwiaWF0IjoxNjM3NzI3Njc4LCJleHAiOjE2Mzc4MTQwNzh9.WwITaw6yBXg72N34Zlxk_SaUwWVY8QoCVV1HbxF37Rw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"daleaparvin@gmail.com\",\r\n    \"password\":\"112233\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/signin",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.2 Buyer should not login without passworld",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Buyer logged in successfully\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThiMmUwNzdmOWY0NzAzY2NlOWJjYzAiLCJyb2xlIjoidXNlciIsImVtYWlsIjoiZGFsZWFwYXJ2aW5AZ21haWwuY29tIiwiaWF0IjoxNjM3NzI3Njc4LCJleHAiOjE2Mzc4MTQwNzh9.WwITaw6yBXg72N34Zlxk_SaUwWVY8QoCVV1HbxF37Rw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"daleaparvin@gmail.com\",\r\n    \"password\":\"112233\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/signin",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.3 Buyer should not login with unregister email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Buyer logged in successfully\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThiMmUwNzdmOWY0NzAzY2NlOWJjYzAiLCJyb2xlIjoidXNlciIsImVtYWlsIjoiZGFsZWFwYXJ2aW5AZ21haWwuY29tIiwiaWF0IjoxNjM3NzI3Njc4LCJleHAiOjE2Mzc4MTQwNzh9.WwITaw6yBXg72N34Zlxk_SaUwWVY8QoCVV1HbxF37Rw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"daleaparvin@gmail.com\",\r\n    \"password\":\"112233\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/signin",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
